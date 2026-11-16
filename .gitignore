@@ -1,0 +1,22 @@
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+
+# Local tooling and generated output
+node_modules/
+__pycache__/
+*.pyc
+*.log
+dist/
+coverage/
+playwright-report/
+test-results/

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hullsong</title>
+<meta name="description" content="A procedural, headphones-first drift through a dead fleet. Explore derelict ships, decode their echoes, and follow what calls.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<canvas id="view"></canvas>
+<div id="vignette"></div>
+<div id="markers"></div>
+<div id="reticle"></div>
+<div id="cursor"></div>
+<div id="story"></div>
+<div id="toast"></div>
+
+<div id="hud" class="hidden">
+  <div id="beat">
+    <div class="beat-main"><span id="beat-sym">α</span><span id="beat-hz">10.0</span><span class="unit">Hz</span></div>
+    <div id="beat-band">alpha</div>
+    <canvas id="beat-wave" width="180" height="34"></canvas>
+    <div id="beat-carrier"></div>
+    <div id="beat-level"></div>
+  </div>
+  <div id="note"></div>
+  <div id="prompt"><div id="prompt-text"></div><div class="track"><div id="prompt-bar"></div></div></div>
+  <div id="status-lines"></div>
+  <div id="help">
+    mouse · steer &nbsp; W · thrust &nbsp; S · brake &nbsp; shift · boost &nbsp; Q/E · roll<br>
+    space · attune (hold, beside an echo) &nbsp; L · land &nbsp; J · journal<br>
+    F · listen &nbsp; B · binaural level &nbsp; M · mute &nbsp; H · hide &nbsp; N · new universe
+  </div>
+</div>
+
+<div id="journal">
+  <div class="inner">
+    <h2>journal</h2>
+    <div id="journal-body"></div>
+    <div class="close">J or esc to close</div>
+  </div>
+</div>
+
+<div id="intro">
+  <h1>hullsong</h1>
+  <p>headphones on. the beats live in the space between your ears.</p>
+  <p class="dim">keep the volume low. drift, listen, follow what calls.</p>
+  <p class="universe" id="intro-desc"></p>
+  <p class="universe" id="intro-music"></p>
+  <button id="begin">begin</button>
+  <p class="small">universe <span id="intro-seed"></span> · <a href="#" id="reroll">another universe</a></p>
+</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
